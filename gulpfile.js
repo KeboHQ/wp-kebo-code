@@ -53,7 +53,7 @@ gulp.task( 'copyassets', function() {
 })
 
 gulp.task( 'copybuild', function() {
-  return gulp.src( 'build/trunk/**' ).pipe( gulp.dest( 'dist/kebo-code/' ) )
+  return gulp.src( 'build/trunk/**' ).pipe( gulp.dest( 'dist/' + pkg.name + '/' ) )
 })
 
 gulp.task( 'archive', function() {
