@@ -1,0 +1,155 @@
+/**
+ * Base Styles
+ */
+.kebo-code,
+.wp-blocks-kebo-code {
+  margin-bottom: 1.5em; }
+
+.kbco-block {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  font-family: Menlo, Consolas, monaco, monospace;
+  font-size: 14px;
+  overflow: auto;
+  max-height: 400px; }
+  .kbco-block .kbco-nums {
+    flex: 0 0 40px;
+    text-align: right;
+    padding: 2px 6px;
+    border-right: 1px solid #dedede;
+    overflow: visible; }
+    .kbco-block .kbco-nums .kbco-num {
+      min-height: 1.5em;
+      line-height: 1.5; }
+  .kbco-block .kbco-code {
+    flex-grow: 1;
+    overflow: visible; }
+    .kbco-block .kbco-code .kbco-lines {
+      padding: 2px 6px;
+      overflow: inherit; }
+      .kbco-block .kbco-code .kbco-lines .kbco-line {
+        font-family: inherit;
+        font-size: inherit;
+        padding: 0;
+        margin: 0;
+        background: none;
+        min-height: 1.5em;
+        line-height: 1.5;
+        overflow: inherit; }
+
+.kbco-block.kbco-github {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  color: #24292e;
+  font-size: 12px;
+  line-height: 20px; }
+  .kbco-block.kbco-github .kbco-nums {
+    color: rgba(27, 31, 35, 0.3);
+    border-right: none; }
+    .kbco-block.kbco-github .kbco-nums .kbco-num {
+      font-size: 12px;
+      line-height: 20px; }
+  .kbco-block.kbco-github .kbco-code .kbco-lines {
+    padding: 2px 6px; }
+    .kbco-block.kbco-github .kbco-code .kbco-lines .kbco-line {
+      font-size: 12px;
+      line-height: 20px; }
+  .kbco-block.kbco-github .kbco-comment {
+    color: #6a737d; }
+  .kbco-block.kbco-github .kbco-unit,
+  .kbco-block.kbco-github .kbco-keyword {
+    color: #d73a49; }
+  .kbco-block.kbco-github .kbco-property,
+  .kbco-block.kbco-github .kbco-operator,
+  .kbco-block.kbco-github .kbco-variable,
+  .kbco-block.kbco-github .kbco-number {
+    color: #005cc5; }
+  .kbco-block.kbco-github .kbco-tag,
+  .kbco-block.kbco-github .kbco-meta {
+    color: #22863a; }
+  .kbco-block.kbco-github .kbco-qualifier,
+  .kbco-block.kbco-github .kbco-attribute {
+    color: #6f42c1; }
+
+.kbco-block.kbco-vsdark {
+  background-color: #1e1e1e;
+  border: 1px solid #1e1e1e;
+  color: #d4d4c8;
+  font-size: 12px;
+  line-height: 20px; }
+  .kbco-block.kbco-vsdark .kbco-nums {
+    color: #7b7b7b;
+    border-right: none; }
+    .kbco-block.kbco-vsdark .kbco-nums .kbco-num {
+      font-size: 12px;
+      line-height: 20px; }
+  .kbco-block.kbco-vsdark .kbco-code .kbco-lines {
+    padding: 2px 6px; }
+    .kbco-block.kbco-vsdark .kbco-code .kbco-lines .kbco-line {
+      font-size: 12px;
+      line-height: 20px; }
+  .kbco-block.kbco-vsdark .kbco-variable {
+    color: #3f9cd6; }
+  .kbco-block.kbco-vsdark .kbco-comment {
+    color: #6a9955; }
+  .kbco-block.kbco-vsdark .kbco-operator,
+  .kbco-block.kbco-vsdark .kbco-builtin,
+  .kbco-block.kbco-vsdark .kbco-def {
+    color: #dcdcaa; }
+  .kbco-block.kbco-vsdark .kbco-variable-2 {
+    color: #9cdcfe; }
+  .kbco-block.kbco-vsdark .kbco-keyword {
+    color: #348cd6; }
+  .kbco-block.kbco-vsdark .kbco-string,
+  .kbco-block.kbco-vsdark .kbco-atom {
+    color: #ce9178; }
+  .kbco-block.kbco-vsdark::-webkit-scrollbar {
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    width: 14px; }
+  .kbco-block.kbco-vsdark::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.35);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.35); }
+  .kbco-block.kbco-vsdark::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.2); }
+
+.kbco-block.kbco-test .kbco-comment {
+  color: #cdab53; }
+
+.kbco-block.kbco-test .kbco-atom {
+  color: #a16a94; }
+
+.kbco-block.kbco-test .kbco-number {
+  color: #a16a94; }
+
+.kbco-block.kbco-test .kbco-property, .kbco-block.kbco-test .kbco-attribute {
+  color: #01a252; }
+
+.kbco-block.kbco-test .kbco-keyword {
+  color: #db2d20; }
+
+.kbco-block.kbco-test .kbco-string {
+  color: #fded02; }
+
+.kbco-block.kbco-test .kbco-variable {
+  color: #01a252; }
+
+.kbco-block.kbco-test .kbco-variable-2 {
+  color: #01a0e4; }
+
+.kbco-block.kbco-test .kbco-def {
+  color: #e8bbd0; }
+
+.kbco-block.kbco-test .kbco-bracket {
+  color: #d6d5d4; }
+
+.kbco-block.kbco-test .kbco-tag {
+  color: #db2d20; }
+
+.kbco-block.kbco-test .kbco-link {
+  color: #a16a94; }
+
+.kbco-block.kbco-test .kbco-error {
+  background: #db2d20;
+  color: #807d7c; }

@@ -1,0 +1,206 @@
+.kebo-code {
+    &.wp-block-kebo-code {
+
+    }
+}
+
+/**
+ * Base Styles
+ */
+
+.kebo-code,
+.wp-blocks-kebo-code {
+    margin-bottom: 1.5em;
+}
+
+.kbco-block {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    font-family: Menlo, Consolas, monaco, monospace;
+    font-size: 14px;
+    overflow: auto;
+    max-height: 400px;
+    .kbco-nums {
+        flex: 0 0 40px;
+        text-align: right;
+        padding: 2px 6px;
+        border-right: 1px solid #dedede;
+        overflow: visible;
+        .kbco-num {
+            min-height: 1.5em;
+            line-height: 1.5;
+        }
+    }
+    .kbco-code {
+        flex-grow: 1;
+        overflow: visible;
+        .kbco-lines {
+            padding: 2px 6px;
+            overflow: inherit;
+            .kbco-line {
+                font-family: inherit;
+                font-size: inherit;
+                padding: 0;
+                margin: 0;
+                background: none;
+                min-height: 1.5em;
+                line-height: 1.5;
+                overflow: inherit;
+            }
+        }
+    }
+}
+
+// Github Theme
+.kbco-block.kbco-github {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    color: #24292e;
+    font-size: 12px;
+    line-height: 20px;
+    .kbco-nums {
+        color: rgba(27,31,35,0.3);
+        border-right: none;
+        .kbco-num {
+            font-size: 12px;
+            line-height: 20px;
+        }
+    }
+    .kbco-code {
+        .kbco-lines {
+            padding: 2px 6px;
+            .kbco-line {
+                font-size: 12px;
+                line-height: 20px;
+            }
+        }
+    }
+
+    .kbco-comment {
+        color: #6a737d;
+    }
+    .kbco-unit,
+    .kbco-keyword {
+        color: #d73a49;
+    }
+    .kbco-property,
+    .kbco-operator,
+    .kbco-variable,
+    .kbco-number {
+        color: #005cc5;
+    }
+    .kbco-tag,
+    .kbco-meta {
+        color: #22863a;
+    }
+    .kbco-qualifier,
+    .kbco-attribute {
+        color: #6f42c1;
+    }
+}
+
+// Github Theme
+.kbco-block.kbco-vsdark {
+    background-color: #1e1e1e;
+    border: 1px solid #1e1e1e;
+    color: #d4d4c8;
+    font-size: 12px;
+    line-height: 20px;
+    .kbco-nums {
+        color: #7b7b7b;
+        border-right: none;
+        .kbco-num {
+            font-size: 12px;
+            line-height: 20px;
+        }
+    }
+    .kbco-code {
+        .kbco-lines {
+            padding: 2px 6px;
+            .kbco-line {
+                font-size: 12px;
+                line-height: 20px;
+            }
+        }
+    }
+
+    .kbco-variable {
+        color: #3f9cd6;
+    }
+    .kbco-comment {
+        color: #6a9955;
+    }
+    .kbco-operator,
+    .kbco-builtin,
+    .kbco-def {
+        color: #dcdcaa;
+    }
+    .kbco-variable-2 {
+        color: #9cdcfe;
+    }
+    .kbco-keyword {
+        color: #348cd6;
+    }
+    .kbco-string,
+    .kbco-atom {
+        color: #ce9178;
+    }
+
+    &::-webkit-scrollbar {
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
+        width: 14px;
+    }
+     
+    &::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.35);
+        box-shadow: inset 0 0 6px rgba(0,0,0,0.35);
+    }
+     
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+}
+
+.kbco-block.kbco-test {
+    .kbco-comment {
+        color: #cdab53; }
+      
+      .kbco-atom {
+        color: #a16a94; }
+      
+      .kbco-number {
+        color: #a16a94; }
+      
+      .kbco-property, .kbco-attribute {
+        color: #01a252; }
+      
+      .kbco-keyword {
+        color: #db2d20; }
+      
+      .kbco-string {
+        color: #fded02; }
+      
+      .kbco-variable {
+        color: #01a252; }
+      
+      .kbco-variable-2 {
+        color: #01a0e4; }
+      
+      .kbco-def {
+        color: #e8bbd0; }
+      
+      .kbco-bracket {
+        color: #d6d5d4; }
+      
+      .kbco-tag {
+        color: #db2d20; }
+      
+      .kbco-link {
+        color: #a16a94; }
+      
+      .kbco-error {
+        background: #db2d20;
+        color: #807d7c; }
+}

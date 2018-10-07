@@ -1,0 +1,19 @@
+/**
+ * Colors
+ */
+.wp-block-kebo-code .components-select-control__input {
+  height: 34px; }
+
+.wp-block-kebo-code .editor-plain-text {
+  font-family: Menlo,Consolas,monaco,monospace;
+  font-size: 14px;
+  color: #23282d;
+  padding: .8em 1.6em;
+  border: 1px solid #e2e4e7;
+  border-radius: 4px; }
+
+.wp-block-kebo-code .blocks-highlight-preview pre {
+  padding: 1.6em; }
+
+.components-base-control .components-select-control__input {
+  height: auto; }

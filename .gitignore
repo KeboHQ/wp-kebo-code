@@ -1,0 +1,11 @@
+# External Code/Libs
+/node_modules/
+/vendor/
+
+# Built plugin files
+build/*
+!build/.gitkeep
+
+# Distribution Archive
+dist/*
+!dist/.gitkeep
