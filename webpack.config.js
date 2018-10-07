@@ -4,14 +4,10 @@ const path = require('path');
 //const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 module.exports = {
-  entry: './assets/js/block.js',
-  mode: 'production',
+  entry: './src/assets/js/block.js',
   output: {
-    filename: './assets/js/block.min.js',
+    filename: './src/assets/js/block.min.js',
     path: path.resolve(__dirname)
-  },
-  externals : {
-    //codemirror: 'codemirror'
   },
   module: {
     rules: [
@@ -48,21 +44,6 @@ module.exports = {
       }
     ]
   },
-  /*optimization: {
-    minimizer: [
-      new UglifyJsPlugin({
-        cache: true,
-        parallel: true,
-        sourceMap: false
-      }),
-      new OptimizeCSSAssetsPlugin({
-        cssProcessorOptions: {
-          cssProcessor: 'sass-loader',
-          zindex: false,
-        },
-      }),
-    ]
-  },*/
   resolve: {
 	  extensions: ['*', '.js', '.jsx', '.sass']
   },
