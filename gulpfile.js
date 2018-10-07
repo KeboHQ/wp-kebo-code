@@ -52,8 +52,12 @@ gulp.task( 'copyassets', function() {
   return gulp.src( paths.srcAssets ).pipe( gulp.dest( paths.buildAssets ) )
 })
 
+gulp.task( 'copybuild', function() {
+  return gulp.src( 'build/trunk/**' ).pipe( gulp.dest( 'dist/kebo-code/' ) )
+})
+
 gulp.task( 'archive', function() {
-  return gulp.src( 'build/trunk/**' ).pipe( archiver( pkg.name + '.zip' ) ).pipe( gulp.dest( paths.dist ) )
+  return gulp.src( 'dist/**' ).pipe( archiver( pkg.name + '.zip' ) ).pipe( gulp.dest( paths.dist ) )
 })
 
 gulp.task( 'default', function( callback ) {
@@ -61,5 +65,5 @@ gulp.task( 'default', function( callback ) {
 });
 
 gulp.task( 'build', function( callback ) {
-  sequence( [ 'clean:dist', 'clean:build' ], [ 'copyphp', 'copyjs', 'copycss', 'copyreadme', 'copyassets' ], 'archive', callback );
+  sequence( [ 'clean:dist', 'clean:build' ], [ 'copyphp', 'copyjs', 'copycss', 'copyreadme', 'copyassets' ], [ 'copybuild' ], [ 'archive' ], callback );
 });
