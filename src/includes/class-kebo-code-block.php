@@ -118,4 +118,4 @@ if ( ! class_exists( 'Kebo_Code_Block' ) ) {
 	}
 
 }
-new Kbco_Block();
+new Kebo_Code_Block();
