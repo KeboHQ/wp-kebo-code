@@ -1,8 +1,5 @@
 const path = require('path');
 
-//const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
-//const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-
 module.exports = {
   entry: './src/assets/js/block.js',
   output: {
@@ -22,23 +19,17 @@ module.exports = {
           {
               loader: 'file-loader',
               options: {
-                  name: '/assets/css/[name].css',
+                  name: '/src/assets/css/[name].css',
               }
           },
           {
-              loader: 'extract-loader'
+              loader: 'extract-loader',
           },
           {
               loader: 'css-loader',
           },
           {
               loader: 'sass-loader',
-              options: {
-                includePaths: [
-                  'node_modules/codemirror/theme',
-                ],
-                sourceMap: false
-              }
           },
         ]
       }
