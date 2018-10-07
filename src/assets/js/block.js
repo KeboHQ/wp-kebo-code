@@ -85,7 +85,7 @@ registerBlockType( 'kebo/code', {
         function onChangeLines() {
             setAttributes( {
                 lines: ! lines,
-                highlighted: highlightCode( content, theme, lang, lines )
+                highlighted: highlightCode( content, theme, lang, ! lines )
             } )
         }
 
@@ -127,7 +127,7 @@ registerBlockType( 'kebo/code', {
             nums.push( '<div class="kbco-num">' + (++size) + '</div>' )
             code.push( '<pre class="kbco-line">' + line.join('') + '</pre>' )
 
-            if ( ! lines ) {
+            if ( lines ) {
                 numbersHTML = '<div class="kbco-nums">'+ nums.join('') +'</div>'
             }
             codeHTML = '<div class="kbco-code"><div class="kbco-lines">'+ code.join('') +'</div></div>'
