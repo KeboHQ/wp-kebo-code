@@ -61,10 +61,6 @@ registerBlockType( 'kebo/code', {
 
         const { attributes: { lang, theme, lines, content, highlighted }, setAttributes, className, isSelected } = props
 
-        //console.log(props)
-        //console.log(props)
-        //console.log(props)
-
         const onChangeContent = ( newContent ) => {
             setAttributes( {
                 content: newContent,
@@ -131,7 +127,7 @@ registerBlockType( 'kebo/code', {
             nums.push( '<div class="kbco-num">' + (++size) + '</div>' )
             code.push( '<pre class="kbco-line">' + line.join('') + '</pre>' )
 
-            if ( lines ) {
+            if ( ! lines ) {
                 numbersHTML = '<div class="kbco-nums">'+ nums.join('') +'</div>'
             }
             codeHTML = '<div class="kbco-code"><div class="kbco-lines">'+ code.join('') +'</div></div>'
@@ -163,7 +159,7 @@ registerBlockType( 'kebo/code', {
                 />
                 <ToggleControl
                     label={ 'Show Lines' }
-                    checked={ !! lines }
+                    checked={ lines }
                     onChange={ onChangeLines }
                 />
             </PanelBody>
