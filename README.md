@@ -1,5 +1,7 @@
 # Kebo Code
 
+[![Build Status](https://travis-ci.org/KeboHQ/wp-kebo-code.svg?branch=master)](https://travis-ci.org/KeboHQ/wp-kebo-code)
+
 A lightweight Syntax Highlighter for WordPress. Outputs static HTML. (Gutenberg / WP 5.0 only)
 
 ## Why another syntax highlighter?
