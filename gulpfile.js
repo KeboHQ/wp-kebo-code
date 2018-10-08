@@ -78,11 +78,11 @@ gulp.task( 'phpcs', function() {
 })
 
 gulp.task( 'default', function( callback ) {
-  sequence( [ 'clean:dist', 'clean:build' ], [ 'clean:build', 'copyphp', 'copyjs', 'copycss', 'copyreadme', 'copyassets' ], callback );
+  sequence( [ 'clean:dist', 'clean:build' ], [ 'webpack:dev' ], [ 'clean:build', 'copyphp', 'copyjs', 'copycss', 'copyreadme', 'copyassets' ], callback );
 })
 
 gulp.task( 'build', function( callback ) {
-  sequence( [ 'clean:dist', 'clean:build' ], [ 'copyphp', 'copyjs', 'copycss', 'copyreadme', 'copyassets' ], [ 'copybuild' ], [ 'archive' ], callback );
+  sequence( [ 'clean:dist', 'clean:build' ], [ 'webpack:prod' ], [ 'copyphp', 'copyjs', 'copycss', 'copyreadme', 'copyassets' ], [ 'copybuild' ], [ 'archive' ], callback );
 })
 
 gulp.task( 'travis', function( callback ) {
