@@ -62,7 +62,9 @@ gulp.task( 'archive', function() {
 })
 
 gulp.task( 'phpcs', function() {
-  return gulp.src([ 'src/**/*.php' ]).pipe( phpcs({ bin: 'vendor/bin/phpcs', standard: 'WordPress', warningSeverity: 0 }) ).pipe( phpcs.reporter('log') )
+  return gulp.src([ 'src/**/*.php' ]).pipe( phpcs({ bin: 'vendor/bin/phpcs', standard: 'WordPress', warningSeverity: 0 }).on( 'error', function (e) {
+    console.log(e)
+  }) ).pipe( phpcs.reporter('log') )
 })
 
 gulp.task( 'default', function( callback ) {
