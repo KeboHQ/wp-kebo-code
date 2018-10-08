@@ -2,6 +2,7 @@ const gulp = require('gulp')
 const del = require('del')
 const archiver = require('gulp-archiver')
 const sequence = require('run-sequence')
+const phpcs = require('gulp-phpcs')
 const pkg = require('./package.json')
 
 var paths = {
@@ -62,8 +63,12 @@ gulp.task( 'archive', function() {
 
 gulp.task( 'default', function( callback ) {
   sequence( [ 'clean:dist', 'clean:build' ], [ 'clean:build', 'copyphp', 'copyjs', 'copycss', 'copyreadme', 'copyassets' ], callback );
-});
+})
 
 gulp.task( 'build', function( callback ) {
   sequence( [ 'clean:dist', 'clean:build' ], [ 'copyphp', 'copyjs', 'copycss', 'copyreadme', 'copyassets' ], [ 'copybuild' ], [ 'archive' ], callback );
-});
+})
+
+gulp.task( 'phpcs', function() {
+  return gulp.src([ 'src/**/*.php' ]).pipe( phpcs({ bin: 'vendor/bin/phpcs', standard: 'WordPress', warningSeverity: 0 }) ).pipe( phpcs.reporter('log') )
+})
