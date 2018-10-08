@@ -32,7 +32,6 @@ if ( ! class_exists( 'Kebo_Code' ) ) {
 		public function init() {
 			add_action( 'plugins_loaded', array( $this, 'load_i18n' ) );
 			add_action( 'wp_register_scripts', array( $this, 'register' ) );
-			add_action( 'wp_enqueue_scripts', array( $this, 'enqueues' ) );
 		}
 
 		/**
@@ -53,7 +52,7 @@ if ( ! class_exists( 'Kebo_Code' ) ) {
 		 *
 		 * Register our CSS and JavaScript files.
 		 *
-		 * @uses wp_enqueue_style()
+		 * @uses wp_register_style()
 		 *
 		 * @return void
 		 */
@@ -63,31 +62,9 @@ if ( ! class_exists( 'Kebo_Code' ) ) {
 		}
 
 		/**
-		 * Enqueue assets.
-		 *
-		 * Conditionally enqueue our CSS and JavaScript when viewing plugin related pages in wp-admin.
-		 *
-		 * @uses wp_enqueue_style()
-		 *
-		 * @return void
-		 */
-		public function enqueues() {
-			global $post;
-			if ( isset( $post ) && has_shortcode( $post->content, 'kb_code' ) ) {
-				// Check for stored code.
-				if ( metadata_exists( 'post', $post->ID, 'kbco_code' ) ) {
-
-					$meta   = get_post_meta( $post->ID, 'kbco_code', true );
-					$stored = maybe_unserialize( $meta );
-
-				}
-			}
-		}
-
-		/**
 		 * Compatibility check on activation.
 		 *
-		 * @uses wp_enqueue_style()
+		 * @uses version_compare()
 		 *
 		 * @return void
 		 */
@@ -98,12 +75,12 @@ if ( ! class_exists( 'Kebo_Code' ) ) {
 
 			if ( version_compare( $GLOBALS['wp_version'], $min_wp_version, '<' ) ) {
 				// translators: WordPress version number.
-				self::block_activation( sprintf( __( 'Kebo Code requires WordPress %s or later to function properly. Please upgrade WordPress before activating Kebo Code.', 'kbco' ), $min_wp_version ) );
+				self::block_activation( sprintf( __( 'Kebo Code requires WordPress %s or later to function properly. Please upgrade WordPress before activating Kebo Code.', 'kebo-code' ), $min_wp_version ) );
 			}
 
 			if ( version_compare( phpversion(), $min_php_version, '<' ) ) {
 				// translators: PHP version number.
-				self::block_activation( sprintf( __( 'Kebo Code requires PHP %s or later to function properly. Please upgrade PHP before activating Kebo Code.', 'kbco' ), $min_php_version ) );
+				self::block_activation( sprintf( __( 'Kebo Code requires PHP %s or later to function properly. Please upgrade PHP before activating Kebo Code.', 'kebo-code' ), $min_php_version ) );
 			}
 
 		}
