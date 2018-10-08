@@ -11,7 +11,9 @@ Lightweight syntax/code highlighting which outputs plain HTML, no bloat or JavaS
 
 == Description ==
 
-This plugin contains a code/syntax highlighting Gutenberg block. It uses CodeMirror and supports the full range of scripts and languages. The highlighting is performed in the editor using CodeMirrors `runMode`, storing the resulting HTML to be used on the frontend.
+** Gutenberg Editor Required **
+
+This plugin contains a code/syntax highlighting Gutenberg block. It uses CodeMirror and supports the full range of [scripts and languages](https://codemirror.net/mode/). The highlighting is performed in the editor using CodeMirrors `runMode`, storing the resulting HTML to be used on the frontend.
 
 == Frequently Asked Questions ==
 
