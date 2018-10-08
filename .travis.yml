@@ -60,7 +60,6 @@ before_script:
       echo "xdebug.ini does not exist"
     fi
   - export PATH="$HOME/.composer/vendor/bin:$PATH"
-  - export PATH="$HOME/node_modules/.bin:$PATH"
   # Install phpunuit test suite
   - |
     if [[ ! -z "$WP_VERSION" ]] ; then
@@ -104,6 +103,6 @@ script:
       npm --version
       node --version
       npm install
-      gulp phpcs
+      ./node_modules/.bin/gulp phpcs
     fi
   - phpunit
