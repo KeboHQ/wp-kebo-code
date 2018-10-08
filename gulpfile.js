@@ -61,6 +61,10 @@ gulp.task( 'archive', function() {
   return gulp.src( 'dist/**' ).pipe( archiver( pkg.name + '.zip' ) ).pipe( gulp.dest( paths.dist ) )
 })
 
+gulp.task( 'phpcs', function() {
+  return gulp.src([ 'src/**/*.php' ]).pipe( phpcs({ bin: 'vendor/bin/phpcs', standard: 'WordPress', warningSeverity: 0 }) ).pipe( phpcs.reporter('log') )
+})
+
 gulp.task( 'default', function( callback ) {
   sequence( [ 'clean:dist', 'clean:build' ], [ 'clean:build', 'copyphp', 'copyjs', 'copycss', 'copyreadme', 'copyassets' ], callback );
 })
@@ -69,6 +73,6 @@ gulp.task( 'build', function( callback ) {
   sequence( [ 'clean:dist', 'clean:build' ], [ 'copyphp', 'copyjs', 'copycss', 'copyreadme', 'copyassets' ], [ 'copybuild' ], [ 'archive' ], callback );
 })
 
-gulp.task( 'phpcs', function() {
-  return gulp.src([ 'src/**/*.php' ]).pipe( phpcs({ bin: 'vendor/bin/phpcs', standard: 'WordPress', warningSeverity: 0 }) ).pipe( phpcs.reporter('log') )
+gulp.task( 'travis', function( callback ) {
+  sequence( [ 'phpcs' ], callback );
 })

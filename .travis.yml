@@ -103,7 +103,6 @@ script:
       npm --version
       node --version
       npm install
-      npm install -g grunt-cli
-      grunt travis
+      gulp phpcs
     fi
   - phpunit
