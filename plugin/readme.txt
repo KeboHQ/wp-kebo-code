@@ -1,7 +1,7 @@
 === Kebo Code ===
 Contributors: PeterBooker
 Tags: code syntax highlighter
-Requires at least: 5.0
+Requires at least: 4.9
 Tested up to: 5.0
 Stable tag: 1.0.0
 License: GPLv2
