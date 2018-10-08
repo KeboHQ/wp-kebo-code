@@ -9,3 +9,7 @@ build/*
 # Distribution Archive
 dist/*
 !dist/.gitkeep
+
+# Ignore Build Files in Src
+src/assets/js/block.build.js
+src/assets/js/block.build.min.js

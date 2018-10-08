@@ -3,7 +3,11 @@ const del = require('del')
 const archiver = require('gulp-archiver')
 const sequence = require('run-sequence')
 const phpcs = require('gulp-phpcs')
+const webpack_stream = require('webpack-stream')
+
 const pkg = require('./package.json')
+const webpackDev = require('./webpack.dev.js');
+const webpackProd = require('./webpack.prod.js');
 
 var paths = {
   srcPHP:      'src/**/*.php',
@@ -31,6 +35,14 @@ gulp.task( 'clean:dist', function() {
     '!dist/',
     '!dist/.gitkeep'
   ])
+})
+
+gulp.task( 'webpack:dev', function() {
+  return webpack_stream( webpackDev ).pipe( gulp.dest( '.' ))
+})
+
+gulp.task( 'webpack:prod', function() {
+  return webpack_stream( webpackProd ).pipe( gulp.dest( '.' ))
 })
 
 gulp.task( 'copyphp', function() {
