@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
   entry: './src/assets/js/block.js',
   output: {
-    filename: './src/assets/js/block.min.js',
+    filename: './src/assets/js/block.build.js',
     path: path.resolve(__dirname)
   },
   module: {
@@ -11,7 +11,7 @@ module.exports = {
       {
       test: /\.js$/,
       exclude: /node_modules/,
-      use: ['babel-loader']
+      use: [ 'babel-loader' ]
       },
       {
         test: /\.scss$/,
