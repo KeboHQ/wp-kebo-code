@@ -54,7 +54,11 @@ if ( ! class_exists( 'Kebo_Code_Block' ) ) {
 				'wp-element',
 				'wp-components',
 			);
-			wp_enqueue_script( 'kebo-code-script', KBCO_URL . 'assets/js/block.min.js', $dependencies, filemtime( KBCO_PATH . '/assets/js/block.min.js' ), true );
+			if ( SCRIPT_DEBUG ) {
+				wp_enqueue_script( 'kebo-code-script', KBCO_URL . 'assets/js/block.build.js', $dependencies, filemtime( KBCO_PATH . '/assets/js/block.min.js' ), true );
+			} else {
+				wp_enqueue_script( 'kebo-code-script', KBCO_URL . 'assets/js/block.build.min.js', $dependencies, filemtime( KBCO_PATH . '/assets/js/block.min.js' ), true );
+			}
 			wp_localize_script( 'kebo-code-script', 'kebo_code_vars', array( 'site_url' => esc_url( KBCO_URL ) ) );
 
 			wp_enqueue_style( 'kebo-code-style', KBCO_URL . 'assets/css/editor.css', array(), filemtime( KBCO_PATH . '/assets/css/editor.css' ) );
