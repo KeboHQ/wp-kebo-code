@@ -47,6 +47,7 @@ before_install:
     if [ "${WP_CS_TEST}" == "yes" ]; then
       npm prune
       npm update
+      ./node_modules/.bin/phpcs --config-set installed_paths $HOME/.composer/vendor/wp-coding-standards/wpcs
     fi
 # Use this to prepare your build for testing.
 # e.g. copy database configurations, environment variables, etc.
