@@ -1,5 +1,5 @@
 $editor-html-font: Menlo, Consolas, monaco, monospace;
-$text-editor-font-size: 14px;
+$text-editor-font-size: 12px;
 
 @import 'colors';
 
@@ -8,8 +8,8 @@ $text-editor-font-size: 14px;
 		height: 34px;
 	}
 	.editor-plain-text {
-		font-family: Menlo,Consolas,monaco,monospace;
-		font-size: 12px;
+		font-family: $editor-html-font;
+		font-size: $text-editor-font-size;
 		color: #23282d;
 		padding: .8em 1.6em;
 		border: 1px solid #e2e4e7;
