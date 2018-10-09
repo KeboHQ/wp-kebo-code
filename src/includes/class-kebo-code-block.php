@@ -55,13 +55,13 @@ if ( ! class_exists( 'Kebo_Code_Block' ) ) {
 				'wp-components',
 			);
 			if ( SCRIPT_DEBUG ) {
-				wp_enqueue_script( 'kebo-code-script', KBCO_URL . 'assets/js/block.build.js', $dependencies, filemtime( KBCO_PATH . '/assets/js/block.min.js' ), true );
+				wp_enqueue_script( 'kebo-code-script', KBCO_URL . 'assets/js/block.build.js', $dependencies, KBCO_VERSION, true );
 			} else {
-				wp_enqueue_script( 'kebo-code-script', KBCO_URL . 'assets/js/block.build.min.js', $dependencies, filemtime( KBCO_PATH . '/assets/js/block.min.js' ), true );
+				wp_enqueue_script( 'kebo-code-script', KBCO_URL . 'assets/js/block.build.min.js', $dependencies, KBCO_VERSION, true );
 			}
 			wp_localize_script( 'kebo-code-script', 'kebo_code_vars', array( 'site_url' => esc_url( KBCO_URL ) ) );
 
-			wp_enqueue_style( 'kebo-code-style', KBCO_URL . 'assets/css/editor.css', array(), filemtime( KBCO_PATH . '/assets/css/editor.css' ) );
+			wp_enqueue_style( 'kebo-code-style', KBCO_URL . 'assets/css/editor.css', array(), KBCO_VERSION );
 
 		}
 
