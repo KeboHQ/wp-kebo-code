@@ -33,6 +33,10 @@ All scripts and languages supported by CodeMirror, [listed here](https://codemir
 
 == Changelog ==
 
+= v 1.0.1 =
+* Fix: Resolved error caused by bad filemtime() call, replaced with plugin version as more efficient.
+* Fix: Corrected plugin version in main php file.
+
 = v 1.0.0 =
 * First public version of the plugin.
 * Contains a single Gutenberg block which syntax highlights code.

@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Useful global constants.
-define( 'KBCO_VERSION', '0.7.0' );
+define( 'KBCO_VERSION', '1.0.1' );
 define( 'KBCO_URL', plugin_dir_url( __FILE__ ) );
 define( 'KBCO_PATH', plugin_dir_path( __FILE__ ) );
 define( 'KBCO_FILE', plugin_basename( __FILE__ ) );
