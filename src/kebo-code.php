@@ -3,7 +3,7 @@
  * Plugin Name: Kebo Code
  * Plugin URI:  https://kebo.io/plugins/code/
  * Description: Lightweight syntax highlighting using CodeMirror- outputting static HTML.
- * Version:     1.0.0
+ * Version:     1.0.1
  * Author:      Kebo
  * Author URI:  https://www.kebo.io/
  * Text Domain: kebo-code
