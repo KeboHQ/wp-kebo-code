@@ -1,25 +1,35 @@
 === Kebo Code ===
 Contributors: PeterBooker
-Tags: code syntax highlighter
+Tags: code highlighter, syntax highlighter, code, syntax
 Requires at least: 4.9
 Tested up to: 5.0
 Stable tag: 1.0.1
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Lightweight syntax/code highlighting which outputs plain HTML, no bloat or JavaScript.
+Lightweight syntax / code highlighter which outputs plain HTML, no bloat or JavaScript.
 
 == Description ==
 
-** Gutenberg Editor Required **
+**(note: Gutenberg Editor Required)**
 
-This plugin contains a code/syntax highlighting Gutenberg block. It uses CodeMirror and supports the full range of [scripts and languages](https://codemirror.net/mode/). The highlighting is performed in the editor using CodeMirrors `runMode`, storing the resulting HTML to be used on the frontend.
+A syntax / code highlighter Gutenberg block. Paste your code into the block, set the language and see your code highlighted exactly like it will display on the frontend.
+
+= Features =
+
+* Syntax highlighting block for the Gutenberg Editor
+* Switch between editor and preview, see exactly what will appear on the frontend.
+* Supports 121 languages, listed [here](https://codemirror.net/mode/).
+* 2 Themes, VSCode Dark+ and Github, see the screenshots below. *(more coming soon)*
+* Static HTML output, no frontend scripts or user tracking.
 
 == Frequently Asked Questions ==
 
 = Why does it require Gutenberg? =
 
 The way the plugin highlights the text, as it is being edited, requires the Gutenberg editor/environment, which means the plugin would do nothing without it.
+
+Specifically, it uses CodeMirror's [runMode](https://codemirror.net/demo/runmode.html) function to process highlighting in real-time.
 
 = Which scipts and languages does it support? =
 
