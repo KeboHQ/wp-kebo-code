@@ -70,8 +70,12 @@ if ( ! class_exists( 'Kebo_Code' ) ) {
 		 */
 		public static function activation() {
 
+			if ( ! function_exists( 'register_block_type' ) ) {
+				self::block_activation( __( 'Kebo Code requires the Gutenberg Plugin or WordPress 5.0 to function properly. Please install either before activating Kebo Code.', 'kebo-code' ) );
+			}
+
 			$min_php_version = '5.6';
-			$min_wp_version  = '4.2';
+			$min_wp_version  = '4.9.8';
 
 			if ( version_compare( $GLOBALS['wp_version'], $min_wp_version, '<' ) ) {
 				// translators: WordPress version number.
