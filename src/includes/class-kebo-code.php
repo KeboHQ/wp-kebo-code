@@ -99,10 +99,8 @@ if ( ! class_exists( 'Kebo_Code' ) ) {
 		 * @return void
 		 */
 		public static function block_activation( $message = '' ) {
-			echo '<div class="error"><p>';
-			echo esc_html( $message );
-			echo '</p></div>';
 			deactivate_plugins( array( 'kebo-code/kebo-code.php' ) );
+			wp_die( '<div class="error"><p>' . esc_html( $message ) . '</p></div>' );
 		}
 	}
 }
