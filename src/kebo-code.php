@@ -23,9 +23,7 @@ define( 'KBCO_FILE', plugin_basename( __FILE__ ) );
 
 // Include class-files used by the plugin.
 require_once KBCO_PATH . '/includes/class-kebo-code.php';
-if ( function_exists( 'gutenberg_init' ) ) {
-	require_once KBCO_PATH . '/includes/class-kebo-code-block.php';
-}
+require_once KBCO_PATH . '/includes/class-kebo-code-block.php';
 
 // Register Activation/Deactivation Hooks.
 register_activation_hook( __FILE__, array( 'Kebo_Code', 'activation' ) );
