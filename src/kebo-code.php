@@ -3,7 +3,7 @@
  * Plugin Name: Kebo Code
  * Plugin URI:  https://kebo.io/plugins/code/
  * Description: Lightweight syntax highlighting using CodeMirror- outputting static HTML.
- * Version:     1.0.1
+ * Version:     1.0.2
  * Author:      Kebo
  * Author URI:  https://www.kebo.io/
  * Text Domain: kebo-code
@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Useful global constants.
-define( 'KBCO_VERSION', '1.0.1' );
+define( 'KBCO_VERSION', '1.0.2' );
 define( 'KBCO_URL', plugin_dir_url( __FILE__ ) );
 define( 'KBCO_PATH', plugin_dir_path( __FILE__ ) );
 define( 'KBCO_FILE', plugin_basename( __FILE__ ) );
