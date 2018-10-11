@@ -24,14 +24,34 @@ if ( ! class_exists( 'Kebo_Code' ) ) {
 		 *
 		 * A helper function, called by `Kebo_Code::__construct()` to initiate actions, hooks and other features needed.
 		 *
+		 * @uses get_option()
+		 * @uses version_compare()
 		 * @uses add_action()
 		 * @uses add_filter()
 		 *
 		 * @return void
 		 */
 		public function init() {
+			$version = get_option( 'kebo_code_version' );
+			if ( false === $version || version_compare( $version, KBCO_VERSION, '<' ) ) {
+				$this->update();
+			}
+
 			add_action( 'plugins_loaded', array( $this, 'load_i18n' ) );
 			add_action( 'wp_register_scripts', array( $this, 'register' ) );
+		}
+
+		/**
+		 * Runs on plugin updates.
+		 *
+		 * Checks for version changes and runs any necessary update processing.
+		 *
+		 * @uses update_option()
+		 *
+		 * @return void
+		 */
+		public function update() {
+			update_option( 'kebo_code_version', KBCO_VERSION );
 		}
 
 		/**
