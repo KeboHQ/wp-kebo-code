@@ -26,4 +26,4 @@ There are only two styles/themes initially, mimicking the Github and VS Code Dar
 
 ## License
 
-Licensed under MIT.
+Licensed under GPLv2.
