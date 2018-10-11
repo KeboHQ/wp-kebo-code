@@ -27,6 +27,10 @@ if ( ! class_exists( 'Kebo_Code_Block' ) ) {
 		 * @return void
 		 */
 		public function init() {
+			if ( ! function_exists( 'register_block_type' ) ) {
+				return;
+			}
+
 			register_block_type(
 				'kebo/code',
 				array(
