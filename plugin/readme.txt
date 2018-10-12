@@ -43,6 +43,9 @@ All scripts and languages supported by CodeMirror, [listed here](https://codemir
 
 == Changelog ==
 
+= v 1.0.2 =
+* Improvement: Added plugin version option and version check so we can process any changes needed for updates in the future.
+
 = v 1.0.1 =
 * Fix: Resolved error caused by bad filemtime() call, replaced with plugin version as more efficient.
 * Fix: Corrected plugin version in main php file.
